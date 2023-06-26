@@ -47,14 +47,17 @@ class SaveResult:
         ws.cell(row=count_def, column=7).value = post['views_post']
         ws.cell(row=count_def, column=8).value = post['name_them']
 
+        ws.cell(row=count_def, column=9).value = post['title_voting']
+        ws.cell(row=count_def, column=10).value = f"YES - {post['yes']}\nNO - {post['no']}"
+
         if len(post['comments']) == 0:
             return True
 
         for count_com, comment in enumerate(post['comments']):
-            ws.cell(row=count_def + count_com, column=9).value = comment['author_comment']
-            ws.cell(row=count_def + count_com, column=10).value = comment['text_comment']
-            ws.cell(row=count_def + count_com, column=11).value = int(comment['like_comment'])
-            ws.cell(row=count_def + count_com, column=12).value = comment['date_comment']
+            ws.cell(row=count_def + count_com, column=11).value = comment['author_comment']
+            ws.cell(row=count_def + count_com, column=12).value = comment['text_comment']
+            ws.cell(row=count_def + count_com, column=13).value = int(comment['like_comment'])
+            ws.cell(row=count_def + count_com, column=14).value = comment['date_comment']
 
         return True
 
@@ -87,9 +90,9 @@ class SaveResult:
 
         result = self.one_sheet(ws)
 
-        filename = f'{filename}.xlsx'
+        filename = f'{filename}'
 
-        wb.save(filename)
+        wb.save(f'{filename}.xlsx')
 
         self.save_to_json(filename, self.good_dict)
 

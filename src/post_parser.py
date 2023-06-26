@@ -181,8 +181,11 @@ class PostParser:
 
             list_comments = GetComments(self.driver).job_comments(post)
 
-            # print()
+            if count % 5 == 0 and count != 0:
+                print(f'Собрал {count} постов')
 
+
+        print(f'Собрал всего {len(self.links_post)} постов')
 
         return self.links_post
 
