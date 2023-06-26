@@ -185,7 +185,7 @@ class SourceParse:
 
         response = self.itter_rows_post(rows_post)
 
-        print(f'Обнаружил {len(self.links_post)} поста (ов)')
+        print(f'Обнаружил {len(self.links_post)} поста(ов)')
 
         return True
 

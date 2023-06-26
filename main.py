@@ -7,7 +7,7 @@ from src.source_parse import SourceParse
 
 
 def main():
-    filter_count_day = 5
+    filter_count_day = 60
 
     browser_core = CreatBrowser()
 
