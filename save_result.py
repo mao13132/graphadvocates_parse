@@ -11,9 +11,10 @@ class SaveResult:
         self.good_dict = good_dict
 
         self.colums = ['Proposal name', 'Proposed by', 'Date', 'Proposal Text', 'Link', 'Likes', 'Views', 'Category',
-                       'Comment Author', 'Comment', 'Comment likes', 'Comment date']
+                       'Grant Committee Vote RESULT', 'Grant Committee Vote', 'Comment Author', 'Comment',
+                       'Comment likes', 'Comment date']
 
-        self.comment_colums = 9
+        self.comment_colums = 11
 
 
     @staticmethod

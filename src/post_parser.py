@@ -143,6 +143,16 @@ class PostParser:
 
         return yes, no
 
+    def get_title_voting(self):
+        try:
+            title_voting = self.driver.find_element(by=By.XPATH, value=f"//*[contains(@data-poll-name, 'poll2')]"
+                                                                       f"//*[contains(@class, 'poll-title')]").text
+
+        except:
+            return ''
+
+        return title_voting
+
     def start_pars(self):
         for count, post in enumerate(self.links_post):
 
@@ -152,6 +162,8 @@ class PostParser:
                 continue
 
             self.click_show_voting()
+
+            post['title_voting'] = self.get_title_voting()
 
             post['yes'], post['no'] = self.get_yes_no_voting()
 
